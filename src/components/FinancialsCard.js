@@ -32,9 +32,6 @@ const FinancialsCard = (props) => {
             margin: '0 2px',
             transform: 'scale(0.8)',
         },
-        table: {
-            // minWidth: 650,
-        },
     });
 
     const classes = useStyles();
@@ -56,7 +53,6 @@ const FinancialsCard = (props) => {
             ? Math.abs(Number(val)).toFixed(2) / 1.0e+3 + "K"
         
             : Math.abs(Number(val)).toFixed(2);
-            console.log(converted);
             return converted;
     }
 

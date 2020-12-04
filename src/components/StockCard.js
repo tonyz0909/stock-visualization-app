@@ -28,9 +28,6 @@ const StockCard = (props) => {
             margin: '0 2px',
             transform: 'scale(0.8)',
         },
-        table: {
-            // minWidth: 650,
-        },
     });
 
     const classes = useStyles();

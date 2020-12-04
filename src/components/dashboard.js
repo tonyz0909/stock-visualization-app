@@ -5,10 +5,8 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Checkbox from '@material-ui/core/Checkbox';
-import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Modal from '@material-ui/core/Modal';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import StockChart from './StockChart';
@@ -17,19 +15,7 @@ import StockCard from './StockCard';
 import FinancialsCard from './FinancialsCard';
 
 import { getStockWeeklyChart, getStockSeasonalChart, getStockInfo } from '../routes/stock_api';
-import OwnershipChart from "./OwnershipChart";
 import { Typography } from "@material-ui/core";
-
-// const MyButton = styled(Button)({
-//     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-//     border: 0,
-//     borderRadius: 3,
-//     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-//     color: 'white',
-//     height: 48,
-//     padding: '0 30px',
-// });
-
 
 const chartColor = "#3f51b5"; // "#ff7300";
 const fillColor = "rgba(63, 81, 181, 0.3)"
@@ -133,15 +119,6 @@ const Dashboard = () => {
     const classes = useStyles();
 
     useEffect(() => {
-        // getStockWeeklyChart('AMZN')
-        //     .then(function (response) {
-        //         setData(response.data);
-        //         setLoading(false);
-        //         setChartData(response.chartData.slice(0, 1000).reverse());
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
         fetchStockDataOnly(); // needed to prevent fetchChartData's useEffect from firing redundantly upon first render
     }, [])
 
@@ -204,7 +181,7 @@ const Dashboard = () => {
                     .then(function (response) {
                         setData(response.data);
                         if (response.chartData) {
-                            setChartData(response.chartData); //.slice(0, 1000).reverse());
+                            setChartData(response.chartData);
                         }
                         setchartLoading(false);
                         setLoading(false);
