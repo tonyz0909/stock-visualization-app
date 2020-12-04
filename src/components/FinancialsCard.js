@@ -72,11 +72,11 @@ const FinancialsCard = (props) => {
                             <Table className={classes.table} aria-label="simple table">
                                 <TableRow>
                                     <TableCell>50-Day Moving Average</TableCell>
-                                    <TableCell align="right">{data['50DayMovingAverage']} ({data['currPrice'] > data['50DayMovingAverage'] ? <span style={{ color: 'rgba(46, 238, 102)' }}>&uarr;</span> : <span style={{ color: 'rgb(254, 61, 87)' }}>&darr;</span>} {(data['50DayMovingAverage'] / data['50DayMovingAverage'])}%)</TableCell>
+                                    <TableCell align="right">{data['50DayMovingAverage']} ({data['currPrice'] > data['50DayMovingAverage'] ? <span style={{ color: 'rgba(46, 238, 102)' }}>&uarr;</span> : <span style={{ color: 'rgb(254, 61, 87)' }}>&darr;</span>} {Math.round((Math.abs(data['currPrice'] - data['50DayMovingAverage']) / data['50DayMovingAverage']) * 100)}%)</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>200-Day Moving Average</TableCell>
-                                    <TableCell align="right">{data['200DayMovingAverage']} ({data['currPrice'] > data['200DayMovingAverage'] ? <span style={{ color: 'rgba(46, 238, 102)' }}>&uarr;</span> : <span style={{ color: 'rgb(254, 61, 87)' }}>&darr;</span>} {(data['200DayMovingAverage']) / data['200DayMovingAverage']}%)</TableCell>
+                                    <TableCell align="right">{data['200DayMovingAverage']} ({data['currPrice'] > data['200DayMovingAverage'] ? <span style={{ color: 'rgba(46, 238, 102)' }}>&uarr;</span> : <span style={{ color: 'rgb(254, 61, 87)' }}>&darr;</span>} {Math.round(Math.abs(data['currPrice'] - data['200DayMovingAverage'])  / data['200DayMovingAverage'] * 100)}%)</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Percent Insiders</TableCell>

@@ -54,7 +54,7 @@ const StockChart = (props) => {
 
     let calcDomain = (dataMax) => {
         if (TargetReference && name === 'weekly') {
-            return Math.max(dataMax, parseInt(props.stockData['AnalystTargetPrice']) * 1.02);
+            return Math.max(dataMax, parseInt(props.stockData['AnalystTargetPrice']) * 1.025);
         }
         return dataMax;
     }
