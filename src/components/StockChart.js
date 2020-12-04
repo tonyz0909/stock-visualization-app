@@ -1,15 +1,7 @@
-import React, { PureComponent, useState, useEffect } from "react";
+import React, { PureComponent } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import {
-    ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine, ReferenceArea,
-    ReferenceDot, Tooltip, CartesianGrid, Legend, Brush, ErrorBar, AreaChart, Area,
-    Label, LabelList
+    ResponsiveContainerXAxis, XAxis, YAxis, ReferenceLine, Tooltip, CartesianGrid, Brush, AreaChart, Area, Label, 
 } from 'recharts';
 
 const AxisLabel = ({ axisType, x = 20, y = 40, width = 60, height = 270, stroke = "#f5f5f5", children }) => {
@@ -42,15 +34,7 @@ const StockChart = (props) => {
     const { name, chartColor, fillColor, XLabel, YLabel, XKey, YKey } = props.chartSpec;
     const { TargetReference, SMAReference } = props;
 
-    const useStyles = makeStyles({
-        checkbox: {
-            color: chartColor
-        }
-    });
-
-    const classes = useStyles();
-
-    let startIndex = name == 'weekly' ? props.startIndex : 0;
+    let startIndex = name === 'weekly' ? props.startIndex : 0;
 
     let calcDomain = (dataMax) => {
         if (TargetReference && name === 'weekly') {

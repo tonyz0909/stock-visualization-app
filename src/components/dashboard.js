@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { makeStyles, withStyles, styled } from '@material-ui/core/styles';
+import React, { useState, useEffect } from "react";
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -128,7 +128,7 @@ const Dashboard = () => {
     });
 
     let fetchStockDataOnly = (() => {
-        if (stock != "") {
+        if (stock !== "") {
             setLoading(true);
             getStockInfo(stock)
                 .then((response) => {
@@ -157,7 +157,7 @@ const Dashboard = () => {
     });
 
     let fetchChartData = (() => {
-        if (stock != "") {
+        if (stock !== "") {
             if (chartSpec.name === 'weekly') {
                 console.log(chartSpec.name);
                 setchartLoading(true);
