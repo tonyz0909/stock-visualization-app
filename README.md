@@ -7,7 +7,7 @@
 
 This project is a stock visualization dashboard created using Gatsby, a React framework used for static site generation.
 
-It contains a quick "overview" card on the left containing at-a-glance key facts for the current stock, and contains a stock chart. The chart can either display weekly prices, or a seasonal chart detailing average month-to-month changes for the stock calculated from the past 5 years. The time range of the stock chart is also adjustable, and the weekly chart can optionally display lines for data points like analyst target price and SMA. Below the chart/overview is an analysis card with additional information like a breakdown of the stock ownership and description of the company.
+The dashboard contains a quick "overview" card on the left containing at-a-glance key facts for the current stock, and a stock chart on the right. The chart can either display weekly prices, or a seasonal chart detailing average month-to-month changes for the stock calculated from the past 5 years. The time range of the stock chart is also adjustable, and the weekly chart can optionally display lines for data points like analyst target price and SMA. Below the chart/overview is an analysis card with additional information like a breakdown of the stock ownership and description of the company.
 
 This project was made using:
 1. Gatsby (in order to speed up static rendering of the site since it has no server-side component)
